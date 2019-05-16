@@ -1,0 +1,34 @@
+ <!DOCTYPE HTML>
+ <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/homepage.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+ <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<header class="masthead" >
+<div class="container">
+      <h2 class="font-weight-light text-center">Flight Details</h2>
+
+    <table class="table table-borderless">
+        <tr>
+            <th>Departure</th>
+            <th>LeaveAt</th>
+            <th>Arrival</th>
+            <th>ArriveAt</th>
+            <th>Duration</th>
+            <th>Airline</th>
+        </tr>
+        <tr th:each="flightDetails : ${flightDetailsList}">
+            <td th:text="${flightDetails.departure}"></td>
+            <td th:text="${flightDetails.departureTime}"></td>
+            <td th:text="${flightDetails.arrival}"></td>
+            <td th:text="${flightDetails.arrivalTime}"></td>
+            <td th:text="${flightDetails.duration}"></td>
+            <td th:text="${flightDetails.airline}"></td>
+        </tr>
+
+    </table>
+
+</div>
+</header>

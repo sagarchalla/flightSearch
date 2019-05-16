@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/homepage.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Flight Search API</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+ <header class="masthead" >
+        <div class="row h-75 align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="font-weight-light">Check Your Next Flight</h1>
+
+                <div class="container col-md-5 mt-4">
+                    <div class="booking-form text-center">
+                        <form action="#" th:action="@{/flightSearch}" th:object="${flightSearchForm}" method="post">
+                            <!-- Destinations  -->
+                            <div class="row mt-2">
+                                <div class="col-sm-4">
+                                    <span class="form-label">From Airport Code</span>
+                                  <input class="form-control" type="text" th:field="${flightSearchForm.fromDestinations}" required>
+                                  </div>
+
+                                <div class="col-sm-4">
+                                    <span class="form-label">To Airport Code</span>
+                                    <input class="form-control" type="text" th:field="${flightSearchForm.toDestinations}" required>
+                                </div>
+
+                                <!-- Dates  -->
+                              <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <span class="form-label">From Date</span>
+                                            <input class="form-control" type="date" th:field="${flightSearchForm.fromDate}" required>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <!-- Buttons  -->
+                            <div class="col">
+                            <input type="submit" class="btn btn-outline-primary" th:value="SEARCH" />
+                             <input type="reset" class="btn btn-outline-primary" th:value="RESET" />
+                            </div>
+                        </form>
+                    </div>
+             </div>
+        </div>
+    </div>
+</header>
+
+</html>
