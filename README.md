@@ -1,7 +1,5 @@
 # flightSearch
-A custom built flight search web application 
-
-This project is inteded for development of a flight search engine 
+This project is inteded for development of a custom flight search engine that is built using spring boot
 
 The project uses amadeus self service api to get flight information. The application can be used to get flight information by providing airport codes. To get started here are the following steps
 
